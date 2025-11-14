@@ -1,9 +1,9 @@
 <section
   id="kontakt"
-  class="flex min-h-[100dvh] flex-col bg-[#FEFAE0] px-6 pt-32 pb-4"
+  class="flex min-h-[100dvh] flex-col bg-brand-yellow px-6 pb-4 pt-32"
 >
   <header class="mb-32">
-    <h2 class="text-left text-6xl font-bold text-black" style="font-family: 'Open Sans Condensed', sans-serif;">
+    <h2 class="font-open-sans text-left text-6xl font-bold text-black">
       Skontaktuj się<br />z nami
     </h2>
   </header>
@@ -11,21 +11,20 @@
   <div class="flex flex-1 flex-col gap-20">
     <!-- Phone Number -->
     <div class="flex flex-col gap-6">
-      <span class="text-base font-bold text-black" style="font-family: 'Inter', sans-serif;">Numer telefonu</span>
+      <span class="font-inter text-base font-bold text-black">Numer telefonu</span>
       <a
         href="tel:+48516649765"
-        class="group relative inline-flex items-end text-[32px] font-bold leading-none text-black"
-        style="font-family: 'Open Sans Condensed', sans-serif;"
+        class="font-open-sans group relative inline-flex items-end text-[32px] font-bold leading-none text-black"
       >
         <span>+48 516 649 765</span>
         <span
           class="pointer-events-none absolute bottom-0 left-0 flex w-full items-end pr-4"
           aria-hidden="true"
         >
-          <span class="h-[5px] w-[282px] bg-[#DDA15E]/40"></span>
+          <span class="h-[5px] w-[282px] bg-brand-orange/40"></span>
           <span class="ml-2 flex items-end gap-[4px]">
-            <span class="h-[5px] w-[5px] rounded-full bg-[#606C38]"></span>
-            <span class="h-[5px] w-[5px] rounded-full bg-[#606C38]"></span>
+            <span class="h-[5px] w-[5px] rounded-full bg-brand-green"></span>
+            <span class="h-[5px] w-[5px] rounded-full bg-brand-green"></span>
           </span>
         </span>
       </a>
@@ -33,28 +32,27 @@
 
     <!-- Email -->
     <div class="flex flex-col gap-6">
-      <span class="text-base font-bold text-black" style="font-family: 'Inter', sans-serif;">Adres e-mail</span>
+      <span class="font-inter text-base font-bold text-black">Adres e-mail</span>
       <a
         href="mailto:kontakt@consmatt.pl"
-        class="group relative inline-flex items-end text-[32px] font-bold leading-none text-black"
-        style="font-family: 'Open Sans Condensed', sans-serif;"
+        class="font-open-sans group relative inline-flex items-end text-[32px] font-bold leading-none text-black"
       >
         <span>kontakt@consmatt.pl</span>
         <span
           class="pointer-events-none absolute bottom-0 left-0 flex w-full items-end pr-4"
           aria-hidden="true"
         >
-          <span class="h-[5px] w-[282px] bg-[#DDA15E]/40"></span>
+          <span class="h-[5px] w-[282px] bg-brand-orange/40"></span>
           <span class="ml-2 flex items-end gap-[4px]">
-            <span class="h-[5px] w-[5px] rounded-full bg-[#606C38]"></span>
-            <span class="h-[5px] w-[5px] rounded-full bg-[#606C38]"></span>
+            <span class="h-[5px] w-[5px] rounded-full bg-brand-green"></span>
+            <span class="h-[5px] w-[5px] rounded-full bg-brand-green"></span>
           </span>
         </span>
       </a>
     </div>
   </div>
 
-  <footer class="flex items-center bg-[#FEFAE0]">
-    <span class="text-lg font-mono font-bold lowercase text-[#000000]">consmatt.</span>
+  <footer class="flex items-center bg-brand-yellow">
+    <span class="font-mono text-lg font-bold lowercase text-black">consmatt.</span>
   </footer>
 </section>

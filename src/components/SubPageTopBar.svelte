@@ -22,7 +22,7 @@
   <div class="flex items-center gap-4">
     <a
       href="/#kontakt"
-      class="flex items-center justify-center text-[#1E1E1E] transition hover:opacity-70"
+      class="flex items-center justify-center text-brand-dark transition hover:opacity-70"
       aria-label="Wyślij wiadomość"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -31,7 +31,7 @@
     </a>
     <button
       onclick={() => isMenuOpen = true}
-      class="flex items-center justify-center text-[#1E1E1E] transition hover:opacity-70"
+      class="flex items-center justify-center text-brand-dark transition hover:opacity-70"
       aria-label="Otwórz menu"
       type="button"
     >

@@ -31,7 +31,7 @@
 
 {#if isOpen}
   <div
-    class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-[#DDA15E] px-3 py-2"
+    class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-brand-orange px-3 py-2"
     role="dialog"
     aria-modal="true"
     aria-label="Menu nawigacyjne"
@@ -40,7 +40,7 @@
     <div class="flex justify-end">
       <button
         onclick={onClose}
-        class="flex h-10 w-10 items-center justify-center text-[#1E1E1E] transition hover:opacity-70"
+        class="flex h-10 w-10 items-center justify-center text-brand-dark transition hover:opacity-70"
         aria-label="Zamknij menu"
         type="button"
       >
@@ -60,27 +60,22 @@
 
     <!-- Logo -->
     <div class="mt-6 text-center">
-      <span class="text-2xl font-mono font-bold lowercase text-[#000000]">consmatt.</span>
+      <span class="font-mono text-2xl font-bold lowercase text-black">consmatt.</span>
     </div>
 
     <!-- Navigation items -->
-    <nav class="mt-20 flex flex-1 flex-col items-center gap-20">
+    <nav class="mt-20 flex flex-1 flex-col items-center gap-8">
       {#each menuItems as item (item.href)}
         <a
           href={item.href}
           onclick={onClose}
-          class="text-center text-[32px] font-bold leading-normal {item.highlight
-            ? 'text-[#FEFAE0]'
-            : 'text-[#000000]'} transition hover:opacity-80"
+          class="text-center text-2xl font-bold leading-normal transition hover:opacity-80 {item.highlight
+            ? 'text-brand-yellow'
+            : 'text-black'}"
         >
           {item.label}
         </a>
       {/each}
     </nav>
-
-    <!-- Footer logo -->
-    <div class="mt-auto px-2 py-2">
-      <span class="text-sm font-mono font-bold lowercase text-[#000000]">consmatt.</span>
-    </div>
   </div>
 {/if}

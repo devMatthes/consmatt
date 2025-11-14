@@ -1,8 +1,13 @@
 <script lang="ts">
   import MobileMenu from "./MobileMenu.svelte";
 
+  const TOPBAR_HEIGHT = 64; // Approximate height in pixels (py-4 + text)
+
   let isMenuOpen = $state(false);
-  let isContactSection = $state(false);
+  let contactTop = $state(Infinity);
+
+  // Derive isContactSection from contactTop
+  let isContactSection = $derived(contactTop <= TOPBAR_HEIGHT);
 
   // Update URL based on visible section and watch contact section for color change
   $effect(() => {
@@ -34,28 +39,23 @@
 
     // Scroll handler for topbar color change
     const contactSection = document.getElementById('kontakt');
-    const checkTopbarColor = () => {
+    const updateContactPosition = () => {
       if (!contactSection) return;
-      
-      const contactRect = contactSection.getBoundingClientRect();
-      const topbarHeight = 64; // Topbar height in pixels
-      
-      // Change color when topbar's bottom edge (topbarHeight) hits contact section's top edge
-      isContactSection = contactRect.top <= topbarHeight;
+      contactTop = contactSection.getBoundingClientRect().top;
     };
 
     // Check on scroll
-    window.addEventListener('scroll', checkTopbarColor, { passive: true });
+    window.addEventListener('scroll', updateContactPosition, { passive: true });
     
     // Initial check
-    checkTopbarColor();
+    updateContactPosition();
 
     // Observe all sections for URL updates
     sectionElements.forEach(section => urlObserver.observe(section));
 
     return () => {
       urlObserver.disconnect();
-      window.removeEventListener('scroll', checkTopbarColor);
+      window.removeEventListener('scroll', updateContactPosition);
     };
   });
 </script>
@@ -63,13 +63,13 @@
 <header
   class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 text-brand-text transition-colors duration-300"
   class:bg-white={!isContactSection}
-  class:bg-[#FEFAE0]={isContactSection}
+  class:bg-brand-yellow={isContactSection}
 >
-  <span class="sm:text-base md:text-2xl font-mono font-bold lowercase">consmatt.</span>
+  <span class="font-mono text-base font-bold lowercase md:text-2xl">consmatt.</span>
   <div class="flex items-center gap-4">
     <a
       href="#kontakt"
-      class="flex items-center justify-center text-[#1E1E1E] transition hover:opacity-70"
+      class="flex items-center justify-center text-brand-dark transition hover:opacity-70"
       aria-label="Wyślij wiadomość"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -78,7 +78,7 @@
     </a>
     <button
       onclick={() => isMenuOpen = true}
-      class="flex items-center justify-center text-[#1E1E1E] transition hover:opacity-70"
+      class="flex items-center justify-center text-brand-dark transition hover:opacity-70"
       aria-label="Otwórz menu"
       type="button"
     >
