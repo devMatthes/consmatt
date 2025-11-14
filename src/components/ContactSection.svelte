@@ -45,9 +45,9 @@
         href="tel:+48516649765"
         class="font-open-sans group relative inline-flex items-end text-2xl font-bold leading-none text-primary"
       >
-        <span>+48 516 649 765</span>
+        <span class="z-1">+48 516 649 765</span>
         <span
-          class="pointer-events-none absolute bottom-0 left-0 flex w-full items-end pr-4"
+          class="pointer-events-none absolute bottom-0 left-0 flex w-full items-end pr-4 z-0"
           aria-hidden="true"
         >
           <span class="h-[5px] w-[282px] bg-accent-primary/40"></span>
@@ -66,9 +66,9 @@
         href="mailto:kontakt@consmatt.pl"
         class="font-open-sans group relative inline-flex items-end text-2xl font-bold leading-none text-primary"
       >
-        <span>kontakt@consmatt.pl</span>
+        <span class="z-1">kontakt@consmatt.pl</span>
         <span
-          class="pointer-events-none absolute bottom-0 left-0 flex w-full items-end pr-4"
+          class="pointer-events-none absolute bottom-0 left-0 flex w-full items-end pr-4 z-0"
           aria-hidden="true"
         >
           <span class="h-[5px] w-[282px] bg-accent-primary/40"></span>
