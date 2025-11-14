@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SubPageTopBar from "../components/SubPageTopBar.svelte";
+import PageHeader from "../components/PageHeader.svelte";
+import FeatureList from "../components/FeatureList.svelte";
+
+const features = [
+  {
+    label: "Responsywność",
+    description: "Twoja strona działa i\nwygląda świetnie\nna każdym urządzeniu."
+  },
+  {
+    label: "Optymalizacja",
+    description: "Skupiamy się na tym,\nżeby Twoja strona\nładowała się w sekundę."
+  },
+  {
+    label: "Bezpieczeństwo",
+    description: "Regularne aktualizacje,\nkopie zapasowe,\ncertyfikat SSL.\nBezpiecznie i stabilnie."
+  },
+  {
+    label: "SEO",
+    description: "Podstawowa optymalizacja SEO. Google szybciej odnajdzie Twoją stronę."
+  },
+  {
+    label: "Wsparcie",
+    description: "Pomagamy we wszystkim - od domeny po publikację strony w sieci."
+  }
+];
+---
+
+<BaseLayout
+  title="Strony Internetowe — consmatt."
+  description="Nowoczesne rozwiązania, które działają. Responsywne, zoptymalizowane i bezpieczne strony internetowe."
+>
+  <div class="flex min-h-screen flex-col bg-white">
+    <SubPageTopBar client:load />
+
+    <!-- Main Content -->
+    <main class="flex flex-1 flex-col px-6 pb-16">
+      <!-- Header Section -->
+      <header class="mb-12 mt-8 text-center">
+        <PageHeader 
+          title="Strony Internetowe\nAplikacje Webowe"
+          subtitle="Nowoczesne rozwiązania, które działają."
+        />
+      </header>
+
+      <!-- Features List -->
+      <FeatureList features={features} />
+    </main>
+  </div>
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SubPageTopBar from "../components/SubPageTopBar.svelte";
+import PageHeader from "../components/PageHeader.svelte";
+import FeatureList from "../components/FeatureList.svelte";
+
+const features = [
+  {
+    label: "Stała opieka nad stroną",
+    description: "Regularnie dbamy o prawidłowe działanie Twojej strony, monitorując jej stabilność i dostępność."
+  },
+  {
+    label: "Aktualizacje systemu i wtyczek",
+    description: "Na bieżąco aktualizujemy CMS, wtyczki i komponenty, aby uniknąć błędów i luk bezpieczeństwa."
+  },
+  {
+    label: "Szybkie reakcje na problemy",
+    description: "Awaria? Błąd? Zgłoś — zajmujemy się tym od razu, przywracając sprawne działanie strony."
+  },
+  {
+    label: "Optymalizacja wydajności",
+    description: "Dbamy o szybkość ładowania i techniczną kondycję witryny, aby działała lekko i bez opóźnień."
+  },
+  {
+    label: "Drobne zmiany i edycje",
+    description: "Na życzenie aktualizujemy treści, zdjęcia oraz wykonujemy małe poprawki i modyfikacje."
+  }
+];
+---
+
+<BaseLayout
+  title="Modernizacja — consmatt."
+  description="Odświeżymy Twoją stronę. Nowoczesne rozwiązania z najnowszymi standardami bezpieczeństwa i optymalizacji."
+>
+  <div class="flex min-h-screen flex-col bg-white">
+    <SubPageTopBar client:load />
+
+    <!-- Main Content -->
+    <main class="flex flex-1 flex-col px-6 pb-16">
+      <!-- Header Section -->
+      <header class="mb-12 mt-8 text-center">
+        <PageHeader 
+          title="Modernizacja\nTwojej Strony"
+          subtitle="Odświeżymy Twoją stronę."
+        />
+      </header>
+
+      <!-- Features List -->
+      <FeatureList features={features} />
+    </main>
+  </div>
+</BaseLayout>

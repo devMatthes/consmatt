@@ -1,0 +1,39 @@
+@import url("https://fonts.cdnfonts.com/css/geist");
+@import url("https://fonts.cdnfonts.com/css/geist-mono");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import "tailwindcss";
+
+:root {
+	color-scheme: light;
+	--font-sans: "Inter", "Satoshi", "SF Pro Display", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+		"Helvetica Neue", sans-serif;
+	--shadow-3xl: 0 40px 120px -50px rgba(99, 102, 241, 0.45);
+	--color-surface: rgba(15, 23, 42, 0.85);
+}
+
+html {
+	font-family: var(--font-sans);
+}
+
+body {
+	background-color: #fff;
+	color: #000;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+@layer utilities {
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.rounded-4xl {
+		border-radius: 2.25rem;
+	}
+
+	.shadow-3xl {
+		box-shadow: var(--shadow-3xl);
+	}
+}

@@ -1,43 +1,55 @@
-# Astro Starter Kit: Minimal
+# Consmatt Digital Studio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Modern web presence for the Consmatt Digital Studio agency, built with **Astro 5**, **Svelte 5**, and **Tailwind CSS**. The project ships a polished marketing site with dedicated pages for services, portfolio, and contact, plus reusable UI components and motion-ready styling.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ✨ Features
 
-## 🚀 Project Structure
+- Astro + Svelte architecture with client-side hydration only where needed
+- Tailwind utility styling, dark UI theme, and reusable layout primitives
+- Home, Services, Portfolio, and Contact pages with agency-focused content
+- Interactive navigation and contact form with optimistic submission state
+- Responsive design targeting modern desktop and mobile breakpoints
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🗂️ Project Structure
 
 ```text
 /
-├── public/
+├── public/                    # Static assets (favicons, social images, etc.)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/            # Reusable Svelte UI components
+│   ├── layouts/               # Shared page layouts
+│   ├── pages/                 # Astro route files (home, services, portfolio, contact)
+│   └── styles/                # Global Tailwind entrypoint and custom utilities
+├── astro.config.mjs           # Astro configuration with Svelte & Tailwind integrations
+├── package.json               # Scripts and dependencies
+└── tsconfig.json              # TypeScript config for the project
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Getting Started
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm install
+npm run dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+Visit <http://localhost:4321> to explore the site in development. Hot-module reloading is enabled out of the box.
 
-## 🧞 Commands
+## 📦 Available Scripts
 
-All commands are run from the root of the project, from a terminal:
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start local development server |
+| `npm run build` | Build the production site to `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run astro ...` | Access additional Astro CLI utilities |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🛠️ Customization Notes
 
-## 👀 Want to learn more?
+- Update copy or add new sections by editing the Svelte components in `src/components/`.
+- Tailwind tokens and custom utilities live in `src/styles/global.css`.
+- Navigation links are defined inside `src/components/Navigation.svelte`.
+- The contact form currently simulates submission; connect it to your preferred API or service when ready.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## � License
+
+This project is provided as a starter for Consmatt Digital Studio. Adapt freely for internal or client work.

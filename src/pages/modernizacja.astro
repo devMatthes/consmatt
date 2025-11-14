@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SubPageTopBar from "../components/SubPageTopBar.svelte";
+import PageHeader from "../components/PageHeader.svelte";
+import FeatureList from "../components/FeatureList.svelte";
+
+const features = [
+  {
+    label: "Nowy Wygląd",
+    description: "Odświeżamy design, poprawiamy czytelność i nadajemy stronie profesjonalny, aktualny charakter."
+  },
+  {
+    label: "Przyspieszamy Stronę",
+    description: "Optymalizacja kodu i grafik sprawia, że strona działa szybciej i nie traci klientów."
+  },
+  {
+    label: "Bezpieczeństwo",
+    description: "Aktualizujemy technologie, wtyczki i zabezpieczenia, dbając o stabilność i ochronę danych."
+  },
+  {
+    label: "SEO i Widoczność w Google",
+    description: "Poprawiamy strukturę strony i elementy techniczne, aby Google łatwiej docierało z Twoją ofertą do klientów."
+  },
+  {
+    label: "Możliwość Rozbudowy",
+    description: "Dodajemy nowe funkcje: formularze, galerie, blog, integracje czy systemy rezerwacji."
+  }
+];
+---
+
+<BaseLayout
+  title="Modernizacja — consmatt."
+  description="Odświeżymy Twoją stronę. Nowoczesne rozwiązania z najnowszymi standardami bezpieczeństwa i optymalizacji."
+>
+  <div class="flex min-h-screen flex-col bg-white">
+    <SubPageTopBar client:load />
+
+    <!-- Main Content -->
+    <main class="flex flex-1 flex-col px-6 pb-16">
+      <!-- Header Section -->
+      <header class="mb-12 mt-8 text-center">
+        <PageHeader 
+          title="Modernizacja\nTwojej Strony"
+          subtitle="Odświeżymy Twoją stronę."
+        />
+      </header>
+
+      <!-- Features List -->
+      <FeatureList features={features} />
+    </main>
+  </div>
+</BaseLayout>

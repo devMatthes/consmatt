@@ -1,0 +1,16 @@
+---
+import "../styles/global.css";
+const { title = "consmatt. — digital studio", description = "consmatt. — digital studio" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="pl" class="h-full scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="min-h-screen bg-white text-brand-text font-sans">
+    <slot />
+  </body>
+</html>
