@@ -4,7 +4,7 @@
 
 <div class="flex flex-col items-center gap-4">
 	<!-- Logo above title -->
-	<div class="mb-4">
+	<div class="mb-8">
 		<span class="font-mono text-2xl font-bold lowercase text-primary">consmatt.</span>
 	</div>
 

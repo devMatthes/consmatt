@@ -6,8 +6,8 @@
 	{#each features as feature (feature.label)}
 		<div class="flex gap-6">
 			<!-- Term column (137px width) -->
-			<dt class="w-[137px] flex-shrink-0">
-				<h3 class="font-inter text-xs/2 font-semibold uppercase text-primary">
+			<dt class="w-[137px] flex-shrink-0 content-center">
+				<h3 class="font-inter text-xs/4 font-semibold uppercase text-primary">
 					{feature.label}
 				</h3>
 			</dt>
