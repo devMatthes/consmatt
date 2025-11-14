@@ -1,0 +1,5 @@
+# Redirect section paths back to homepage (for Netlify)
+/home /
+/oferta /
+/realizacje /
+/kontakt /

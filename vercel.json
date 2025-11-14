@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/home", "destination": "/" },
+    { "source": "/oferta", "destination": "/" },
+    { "source": "/realizacje", "destination": "/" },
+    { "source": "/kontakt", "destination": "/" }
+  ]
+}
