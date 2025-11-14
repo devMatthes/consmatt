@@ -5,6 +5,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 @import "tailwindcss";
 
+@theme {
+	/* Brand Colors */
+	--color-brand-yellow: #FEFAE0;
+	--color-brand-orange: #DDA15E;
+	--color-brand-green: #606C38;
+	--color-brand-dark: #1E1E1E;
+	--color-brand-gray: #7E7E7E;
+	--color-brand-navy: #001527;
+	--color-brand-text: #1B1B1B;
+	--color-brand-primary: #606C38;
+
+	/* Font Families */
+	--font-family-inter: "Inter", sans-serif;
+	--font-family-lato: "Lato", sans-serif;
+	--font-family-helvetica: "Helvetica", "Arial", sans-serif;
+	--font-family-open-sans: "Open Sans Condensed", sans-serif;
+	--font-family-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+	--font-family-sans: "Geist", "Inter", system-ui, sans-serif;
+}
+
 :root {
 	color-scheme: light;
 	--font-sans: "Inter", "Satoshi", "SF Pro Display", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
