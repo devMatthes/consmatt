@@ -31,7 +31,7 @@
 
 {#if isOpen}
   <div
-    class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-brand-orange px-3 py-2"
+    class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-accent px-3 py-2"
     role="dialog"
     aria-modal="true"
     aria-label="Menu nawigacyjne"
@@ -40,7 +40,7 @@
     <div class="flex justify-end">
       <button
         onclick={onClose}
-        class="flex h-10 w-10 items-center justify-center text-brand-dark transition hover:opacity-70"
+        class="flex h-10 w-10 items-center justify-center text-mobile-menu transition hover:opacity-70"
         aria-label="Zamknij menu"
         type="button"
       >
@@ -60,7 +60,7 @@
 
     <!-- Logo -->
     <div class="mt-6 text-center">
-      <span class="font-mono text-2xl font-bold lowercase text-black">consmatt.</span>
+      <span class="font-mono text-2xl font-bold lowercase text-mobile-menu">consmatt.</span>
     </div>
 
     <!-- Navigation items -->
@@ -71,7 +71,7 @@
           onclick={onClose}
           class="text-center text-2xl font-bold leading-normal transition hover:opacity-80 {item.highlight
             ? 'text-brand-yellow'
-            : 'text-black'}"
+            : 'text-mobile-menu'}"
         >
           {item.label}
         </a>

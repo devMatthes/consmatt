@@ -5,19 +5,19 @@
 <div class="flex flex-col items-center gap-4">
 	<!-- Logo above title -->
 	<div class="mb-4">
-		<span class="font-mono text-2xl font-bold lowercase text-black">consmatt.</span>
+		<span class="font-mono text-2xl font-bold lowercase text-primary">consmatt.</span>
 	</div>
 
-	<!-- Title with yellow background highlight -->
+	<!-- Title with highlight background -->
 	<div class="relative">
-		<!-- Yellow background highlight - offset and positioned -->
+		<!-- Highlight background - offset and positioned -->
 		<div 
-			class="absolute left-1/4 top-1/2 z-0 h-12 w-full rounded-xl bg-brand-yellow"
+			class="absolute left-1/4 top-1/2 z-0 h-12 w-full rounded-xl bg-highlight"
 		></div>
 		
 		<!-- Title text on top -->
 		<h1 
-			class="font-inter relative z-[1] whitespace-pre-line text-2xl font-bold text-brand-dark"
+			class="font-inter relative z-[1] whitespace-pre-line text-2xl font-bold text-primary"
 		>
 			{title}
 		</h1>
@@ -25,7 +25,7 @@
 	
 	<!-- Subtitle -->
 	{#if subtitle}
-		<p class="font-helvetica mt-4 text-sm text-brand-gray">
+		<p class="font-helvetica mt-4 text-sm text-secondary">
 			{subtitle}
 		</p>
 	{/if}

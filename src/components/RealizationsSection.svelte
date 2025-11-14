@@ -14,6 +14,7 @@
     logoText: string | null;
     logoColor: string | null;
     type: ProjectType;
+    url: string;
   }
 
   const projects: Project[] = [
@@ -26,6 +27,7 @@
       logoText: "RPV",
       logoColor: "white",
       type: "detailed",
+      url: "https://rpv.pl/",
     },
     {
       title: "consmatt",
@@ -36,25 +38,29 @@
       logoText: "consmatt.",
       logoColor: "#000000",
       type: "simple",
+      url: "https://consmatt.vercel.app/",
     },
   ];
 </script>
 
 <section id="realizacje" class="flex flex-col gap-16 px-6 py-16 sm:px-6 lg:px-8">
   <header class="flex flex-col gap-4">
-    <p class="text-base leading-relaxed text-brand-gray">Nasze Realizacje</p>
+    <p class="text-base leading-relaxed text-secondary">Nasze Realizacje</p>
     <div class="flex flex-col">
-      <span class="font-mono text-xl font-bold lowercase text-black sm:text-3xl">consmatt.</span>
-      <h2 class="font-lato text-3xl font-bold tracking-tight text-black sm:text-5xl">Digital Studio</h2>
+      <span class="font-mono text-xl font-bold lowercase text-primary sm:text-3xl">consmatt.</span>
+      <h2 class="font-lato text-3xl font-bold tracking-tight text-primary sm:text-5xl">Digital Studio</h2>
     </div>
   </header>
 
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
     {#each projects as project (project.title)}
-      <article
-        class="relative m-0 flex aspect-square flex-col overflow-hidden transition sm:m-2"
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="relative m-0 flex aspect-square flex-col overflow-hidden transition hover:opacity-90 sm:m-2"
         style="background-color: {project.bgColor};"
-        aria-label={`Prezentacja projektu ${project.title}`}
+        aria-label={`Odwiedź stronę projektu ${project.title}`}
       >
         {#if project.type === 'detailed'}
           <!-- Projekt 01: RPV (Detailed) -->
@@ -88,7 +94,7 @@
             {project.logoText}
           </div>
         {/if}
-      </article>
+      </a>
     {/each}
   </div>
 </section>
