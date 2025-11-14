@@ -1,3 +1,32 @@
+<script>
+  import { onMount } from 'svelte';
+  
+  onMount(() => {
+    // Add LocalBusiness structured data for contact info
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "consmatt. digital studio",
+      "url": "https://consmatt.pl",
+      "telephone": "+48516649765",
+      "email": "kontakt@consmatt.pl",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "addressCountry": "PL"
+      },
+      "priceRange": "$$",
+      "openingHours": "Mo-Fr 09:00-17:00"
+    });
+    document.head.appendChild(script);
+  });
+</script>
+
 <section
   id="kontakt"
   class="flex min-h-screen flex-col bg-secondary px-6 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-32"

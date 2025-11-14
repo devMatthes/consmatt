@@ -15,7 +15,7 @@
 			class="absolute left-1/4 top-1/2 z-0 h-12 w-full rounded-xl bg-highlight"
 		></div>
 		
-		<!-- Title text on top -->
+		<!-- Title text on top - now H1 for SEO -->
 		<h1 
 			class="font-inter relative z-[1] whitespace-pre-line text-2xl font-bold text-primary"
 		>

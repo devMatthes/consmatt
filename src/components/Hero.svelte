@@ -3,10 +3,13 @@
   class="relative flex flex-1 flex-col justify-end gap-6 px-6 pb-36 pt-24"
   style="min-height: calc(100dvh - 4rem);"
 >
-  <div class="flex flex-col">
-    <span class="font-mono text-3xl font-bold lowercase text-primary">consmatt.</span>
+  <div class="flex flex-col gap-10">
+    <div>
+        <span class="font-mono text-2xl font-bold lowercase text-primary">consmatt.</span>
+        <div class="font-lato text-3xl font-bold tracking-tight text-primary sm:text-5xl">Digital Studio</div>
+    </div>
     <h1 class="font-lato text-4xl font-bold text-primary">
-      Digital Studio
+      Strony Internetowe i Aplikacje Webowe
     </h1>
   </div>
 

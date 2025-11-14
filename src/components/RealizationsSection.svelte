@@ -41,6 +41,17 @@
       url: "https://consmatt.vercel.app/",
     },
   ];
+
+  // Helper function for better alt text
+  function getAltText(project: Project): string {
+    if (project.title === "RPV") {
+      return "Podgląd strony internetowej RPV - firma zajmująca się instalacją fotowoltaiki i energią odnawialną";
+    }
+    if (project.title === "consmatt") {
+      return "Logo i strona consmatt digital studio - agencja interaktywna specjalizująca się w tworzeniu stron internetowych";
+    }
+    return `Projekt strony internetowej ${project.title}`;
+  }
 </script>
 
 <section id="realizacje" class="flex flex-col gap-16 px-6 py-16 sm:px-6 lg:px-8">
@@ -48,7 +59,7 @@
     <p class="text-base leading-relaxed text-secondary">Nasze Realizacje</p>
     <div class="flex flex-col">
       <span class="font-mono text-xl font-bold lowercase text-primary sm:text-3xl">consmatt.</span>
-      <h2 class="font-lato text-3xl font-bold tracking-tight text-primary sm:text-5xl">Digital Studio</h2>
+      <div class="font-lato text-3xl font-bold tracking-tight text-primary sm:text-5xl">Digital Studio</div>
     </div>
   </header>
 
@@ -67,7 +78,7 @@
           <div class="flex flex-1 items-center justify-center p-8">
             <img
               src={project.image}
-              alt={project.description}
+              alt={getAltText(project)}
               class="h-auto w-full max-w-[280px] rounded-[4px] object-cover shadow-[0px_40px_32px_8px_rgba(0,135,240,0.08)]"
             />
           </div>
@@ -86,7 +97,7 @@
           <div class="flex flex-1 items-center justify-center p-8">
             <img
               src={project.image}
-              alt={project.description}
+              alt={getAltText(project)}
               class="mx-auto h-auto w-full max-w-[120px] object-contain shadow-[0px_40px_32px_8px_rgba(0,0,0,0.08)]"
             />
           </div>

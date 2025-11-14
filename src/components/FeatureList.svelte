@@ -7,9 +7,9 @@
 		<div class="flex gap-6">
 			<!-- Term column (137px width) -->
 			<dt class="w-[137px] flex-shrink-0">
-				<span class="font-inter text-xs/2 font-semibold uppercase text-primary">
+				<h3 class="font-inter text-xs/2 font-semibold uppercase text-primary">
 					{feature.label}
-				</span>
+				</h3>
 			</dt>
 			
 			<!-- Definition column -->
