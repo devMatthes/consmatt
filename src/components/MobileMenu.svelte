@@ -13,6 +13,25 @@
     { label: "Kontakt", href: "#kontakt", highlight: false },
   ];
 
+  function handleNavClick(event: MouseEvent, href: string) {
+    const sectionId = href.replace('#', '');
+    const isHomePage = window.location.pathname === '/';
+    
+    if (isHomePage) {
+      // On homepage: scroll to section
+      event.preventDefault();
+      const targetElement = document.getElementById(sectionId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        onClose();
+      }
+    } else {
+      // On other pages: navigate to section page
+      const targetPath = sectionId === 'home' ? '/' : `/${sectionId}`;
+      window.location.href = targetPath;
+    }
+  }
+
   // Prevent body scroll when menu is open
   $effect(() => {
     if (isOpen) {
@@ -68,7 +87,7 @@
       {#each menuItems as item (item.href)}
         <a
           href={item.href}
-          onclick={onClose}
+          onclick={(event) => handleNavClick(event, item.href)}
           class="text-center text-2xl font-bold leading-normal transition hover:opacity-80 {item.highlight
             ? 'text-brand-yellow'
             : 'text-mobile-menu'}"

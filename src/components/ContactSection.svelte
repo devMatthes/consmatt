@@ -26,7 +26,6 @@
     document.head.appendChild(script);
   });
 </script>
-
 <section
   id="kontakt"
   class="flex min-h-screen flex-col bg-secondary px-6 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-32"

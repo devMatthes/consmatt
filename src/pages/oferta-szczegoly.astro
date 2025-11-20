@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TopBar from "../components/TopBar.svelte";
+import DesktopTopBar from "../components/desktop/DesktopTopBar.svelte";
+import OfferDetailSection from "../components/offer/OfferDetailSection.svelte";
+import Footer from "../components/Footer.svelte";
+import DesktopFooter from "../components/desktop/DesktopFooter.svelte";
+---
+
+<BaseLayout
+  title="Oferta — consmatt. Digital Studio"
+  description="Poznaj szczegóły procesu tworzenia produktów cyfrowych z consmatt. Od strategii, przez projektowanie, development, aż po wsparcie i rozwój."
+  canonical="/oferta-szczegoly"
+>
+  <div class="hidden lg:block">
+    <DesktopTopBar client:load />
+  </div>
+
+  <main class="flex-1 bg-white">
+    <OfferDetailSection client:load />
+  </main>
+
+  <div class="hidden lg:block">
+    <DesktopFooter variant="light" client:load />
+  </div>
+</BaseLayout>

@@ -9,6 +9,36 @@
   // Derive isContactSection from contactTop
   let isContactSection = $derived(contactTop <= TOPBAR_HEIGHT);
 
+  function handleLogoClick(event: MouseEvent) {
+    event.preventDefault();
+    const isHomePage = window.location.pathname === '/';
+    
+    if (isHomePage) {
+      const homeElement = document.getElementById('home');
+      if (homeElement) {
+        homeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      window.location.href = '/';
+    }
+  }
+
+  function handleContactClick(event: MouseEvent) {
+    event.preventDefault();
+    const isHomePage = window.location.pathname === '/';
+    
+    if (isHomePage) {
+      const kontaktElement = document.getElementById('kontakt');
+      if (kontaktElement) {
+        kontaktElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      window.location.href = '/kontakt';
+    }
+  }
+
   // Update URL based on visible section and watch contact section for color change
   $effect(() => {
     const sections = ['home', 'oferta', 'realizacje', 'kontakt'];
@@ -66,7 +96,8 @@
   class:bg-secondary={isContactSection}
 >
   <a 
-    href="#home" 
+    href="/" 
+    onclick={handleLogoClick}
     class="font-mono text-base font-bold lowercase text-primary transition hover:opacity-70 md:text-2xl"
     aria-label="Powrót do strony głównej"
   >
@@ -74,7 +105,8 @@
   </a>
   <div class="flex items-center gap-4">
     <a
-      href="#kontakt"
+      href="/kontakt"
+      onclick={handleContactClick}
       class="flex items-center justify-center text-primary transition hover:opacity-70"
       aria-label="Wyślij wiadomość"
     >

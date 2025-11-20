@@ -1,4 +1,4 @@
-<section id="oferta" class="flex flex-col gap-10 px-6 py-16 sm:px-6 lg:px-8">
+<section class="flex flex-col gap-10 px-6 py-16 sm:px-6 lg:px-8">
   <header class="flex flex-col gap-4">
     <p class="text-base leading-relaxed text-secondary">Nasza Oferta</p>
     <div class="flex flex-col">

@@ -54,7 +54,7 @@
   }
 </script>
 
-<section id="realizacje" class="flex flex-col gap-16 px-6 py-16 sm:px-6 lg:px-8">
+<section class="flex flex-col gap-16 px-6 py-16 sm:px-6 lg:px-8">
   <header class="flex flex-col gap-4">
     <p class="text-base leading-relaxed text-secondary">Nasze Realizacje</p>
     <div class="flex flex-col">

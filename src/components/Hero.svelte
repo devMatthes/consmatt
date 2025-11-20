@@ -1,5 +1,4 @@
 <section
-  id="home"
   class="relative flex flex-1 flex-col justify-end gap-6 px-6 pb-36 pt-24"
   style="min-height: calc(100dvh - 4rem);"
 >

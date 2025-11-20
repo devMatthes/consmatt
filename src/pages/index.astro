@@ -5,6 +5,15 @@ import Hero from "../components/Hero.svelte";
 import OfferSection from "../components/OfferSection.svelte";
 import RealizationsSection from "../components/RealizationsSection.svelte";
 import ContactSection from "../components/ContactSection.svelte";
+import Footer from "../components/Footer.svelte";
+
+// Desktop components
+import DesktopTopBar from "../components/desktop/DesktopTopBar.svelte";
+import DesktopHero from "../components/desktop/DesktopHero.svelte";
+import DesktopOffer from "../components/desktop/DesktopOffer.svelte";
+import DesktopRealizations from "../components/desktop/DesktopRealizations.svelte";
+import DesktopContact from "../components/desktop/DesktopContact.svelte";
+import DesktopFooter from "../components/desktop/DesktopFooter.svelte";
 ---
 
 <BaseLayout
@@ -12,11 +21,56 @@ import ContactSection from "../components/ContactSection.svelte";
   description="Tworzymy nowoczesne strony internetowe i aplikacje webowe dopasowane do Twoich potrzeb. Szybkie, responsywne, skuteczne rozwiązania."
   canonical="/"
 >
-  <div class="flex flex-1 flex-col">
+  <div class="lg:hidden">
     <TopBar client:load />
-    <Hero />
-    <OfferSection />
-    <RealizationsSection />
-    <ContactSection />
+  </div>
+
+  <div class="hidden lg:block">
+    <DesktopTopBar client:load />
+  </div>
+
+  <main class="flex-1">
+    <section id="home">
+      <div class="lg:hidden">
+        <Hero />
+      </div>
+      <div class="hidden lg:block">
+        <DesktopHero client:load />
+      </div>
+    </section>
+
+    <section id="oferta">
+      <div class="lg:hidden">
+        <OfferSection />
+      </div>
+      <div class="hidden lg:block">
+        <DesktopOffer />
+      </div>
+    </section>
+
+    <section id="realizacje">
+      <div class="lg:hidden">
+        <RealizationsSection />
+      </div>
+      <div class="hidden lg:block">
+        <DesktopRealizations />
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="lg:hidden">
+        <ContactSection />
+      </div>
+      <div class="hidden lg:block">
+        <DesktopContact />
+      </div>
+    </section>
+  </main>
+
+  <div class="lg:hidden">
+    <Footer />
+  </div>
+  <div class="hidden lg:block">
+    <DesktopFooter client:load />
   </div>
 </BaseLayout>

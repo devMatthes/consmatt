@@ -2,6 +2,16 @@
   import MobileMenu from "./MobileMenu.svelte";
 
   let isMenuOpen = $state(false);
+
+  function handleBackClick(event: MouseEvent) {
+    event.preventDefault();
+    window.location.href = '/oferta';
+  }
+
+  function handleContactClick(event: MouseEvent) {
+    event.preventDefault();
+    window.location.href = '/kontakt';
+  }
 </script>
 
 <header
@@ -9,7 +19,8 @@
 >
   <!-- Back Arrow -->
   <a
-    href="/#oferta"
+    href="/oferta"
+    onclick={handleBackClick}
     class="inline-flex items-center justify-center text-primary transition hover:opacity-70"
     aria-label="Powrót do strony głównej"
   >
@@ -21,7 +32,8 @@
   <!-- Right side icons -->
   <div class="flex items-center gap-4">
     <a
-      href="/#kontakt"
+      href="/kontakt"
+      onclick={handleContactClick}
       class="flex items-center justify-center text-primary transition hover:opacity-70"
       aria-label="Wyślij wiadomość"
     >
