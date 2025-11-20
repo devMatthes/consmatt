@@ -4,15 +4,21 @@
 >
   <div class="flex flex-col gap-10">
     <div>
-        <span class="font-mono text-2xl font-bold lowercase text-primary">consmatt.</span>
-        <div class="font-lato text-4xl font-bold tracking-tight text-primary sm:text-5xl">Digital Studio</div>
+      <span class="font-mono text-2xl font-bold lowercase text-primary"
+        >consmatt.</span
+      >
+      <div
+        class="font-lato text-4xl font-bold tracking-tight text-primary sm:text-5xl"
+      >
+        Digital Studio
+      </div>
     </div>
     <h1 class="font-lato text-2xl font-bold text-primary">
       Strony Internetowe i <br /> Aplikacje Webowe
     </h1>
   </div>
 
-  <p class="font-sans max-w-[328px] text-sm/5 text-secondary">
+  <p class="font-sans max-w-[328px] text-sm/5 text-muted-foreground">
     Tworzymy nowoczesne strony dopasowane <br /> do Twoich potrzeb. <br />
     Szybkie, responsywne, skuteczne.
   </p>

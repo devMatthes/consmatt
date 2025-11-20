@@ -14,20 +14,20 @@
   ];
 
   function handleNavClick(event: MouseEvent, href: string) {
-    const sectionId = href.replace('#', '');
-    const isHomePage = window.location.pathname === '/';
-    
+    const sectionId = href.replace("#", "");
+    const isHomePage = window.location.pathname === "/";
+
     if (isHomePage) {
       // On homepage: scroll to section
       event.preventDefault();
       const targetElement = document.getElementById(sectionId);
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
         onClose();
       }
     } else {
       // On other pages: navigate to section page
-      const targetPath = sectionId === 'home' ? '/' : `/${sectionId}`;
+      const targetPath = sectionId === "home" ? "/" : `/${sectionId}`;
       window.location.href = targetPath;
     }
   }
@@ -38,8 +38,8 @@
       // Store original overflow value
       const originalOverflow = document.body.style.overflow;
       // Prevent scrolling
-      document.body.style.overflow = 'hidden';
-      
+      document.body.style.overflow = "hidden";
+
       // Cleanup: restore scroll when menu closes
       return () => {
         document.body.style.overflow = originalOverflow;
@@ -50,7 +50,7 @@
 
 {#if isOpen}
   <div
-    class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-accent px-3 py-2"
+    class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-brand-orange dark:bg-background px-3 py-2"
     role="dialog"
     aria-modal="true"
     aria-label="Menu nawigacyjne"
@@ -59,7 +59,7 @@
     <div class="flex justify-end">
       <button
         onclick={onClose}
-        class="flex h-10 w-10 items-center justify-center text-mobile-menu transition hover:opacity-70"
+        class="flex h-10 w-10 items-center justify-center text-foreground transition hover:opacity-70"
         aria-label="Zamknij menu"
         type="button"
       >
@@ -79,7 +79,9 @@
 
     <!-- Logo -->
     <div class="mt-6 text-center">
-      <span class="font-mono text-2xl font-bold lowercase text-mobile-menu">consmatt.</span>
+      <span class="font-mono text-2xl font-bold lowercase text-foreground"
+        >consmatt.</span
+      >
     </div>
 
     <!-- Navigation items -->
@@ -90,7 +92,7 @@
           onclick={(event) => handleNavClick(event, item.href)}
           class="text-center text-2xl font-bold leading-normal transition hover:opacity-80 {item.highlight
             ? 'text-brand-yellow'
-            : 'text-mobile-menu'}"
+            : 'text-foreground'}"
         >
           {item.label}
         </a>

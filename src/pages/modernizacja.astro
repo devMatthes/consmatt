@@ -7,24 +7,29 @@ import FeatureList from "../components/FeatureList.svelte";
 const features = [
   {
     label: "Nowy Wygląd",
-    description: "Odświeżamy design, poprawiamy czytelność i nadajemy stronie profesjonalny, aktualny charakter."
+    description:
+      "Odświeżamy design, poprawiamy czytelność i nadajemy stronie profesjonalny, aktualny charakter.",
   },
   {
     label: "Przyspieszamy Stronę",
-    description: "Optymalizacja kodu i grafik sprawia, że strona działa szybciej i nie traci klientów."
+    description:
+      "Optymalizacja kodu i grafik sprawia, że strona działa szybciej i nie traci klientów.",
   },
   {
     label: "Bezpieczeństwo",
-    description: "Aktualizujemy technologie, wtyczki i zabezpieczenia, dbając o stabilność i ochronę danych."
+    description:
+      "Aktualizujemy technologie, wtyczki i zabezpieczenia, dbając o stabilność i ochronę danych.",
   },
   {
     label: "SEO i Widoczność w Google",
-    description: "Poprawiamy strukturę strony i elementy techniczne, aby Google łatwiej docierało z Twoją ofertą do klientów."
+    description:
+      "Poprawiamy strukturę strony i elementy techniczne, aby Google łatwiej docierało z Twoją ofertą do klientów.",
   },
   {
     label: "Możliwość Rozbudowy",
-    description: "Dodajemy nowe funkcje: formularze, galerie, blog, integracje czy systemy rezerwacji."
-  }
+    description:
+      "Dodajemy nowe funkcje: formularze, galerie, blog, integracje czy systemy rezerwacji.",
+  },
 ];
 ---
 
@@ -34,14 +39,14 @@ const features = [
   canonical="/modernizacja"
   breadcrumbTitle="Modernizacja"
 >
-  <div class="flex min-h-screen flex-col bg-primary">
+  <div class="flex min-h-screen flex-col bg-background">
     <SubPageTopBar client:load />
 
     <!-- Main Content -->
     <main class="flex flex-1 flex-col px-6 pb-16">
       <!-- Header Section -->
       <header class="mb-18 mt-8 text-center">
-        <PageHeader 
+        <PageHeader
           title="Modernizacja\nTwojej Strony"
           subtitle="Odświeżymy Twoją stronę."
         />

@@ -7,14 +7,16 @@
 		<div class="flex gap-6">
 			<!-- Term column (137px width) -->
 			<dt class="w-[137px] flex-shrink-0 content-center">
-				<h3 class="font-inter text-xs/4 font-semibold uppercase text-primary">
+				<h3
+					class="font-inter text-xs/4 font-semibold uppercase text-primary"
+				>
 					{feature.label}
 				</h3>
 			</dt>
-			
+
 			<!-- Definition column -->
 			<dd class="flex-1">
-				<p class="font-inter text-sm/5 text-primary">
+				<p class="font-inter text-sm/5 text-muted-foreground">
 					{feature.description}
 				</p>
 			</dd>

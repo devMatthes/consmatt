@@ -1,13 +1,13 @@
 ---
 import "../styles/global.css";
 
-const { 
-  title = "consmatt. — digital studio", 
+const {
+  title = "consmatt. — digital studio",
   description = "consmatt. — digital studio",
   ogImage = "/image 2.png",
   canonical = Astro.url.pathname,
   robots = "index, follow",
-  breadcrumbTitle = null
+  breadcrumbTitle = null,
 } = Astro.props;
 
 const siteUrl = "https://consmatt.com";
@@ -15,55 +15,61 @@ const fullUrl = `${siteUrl}${canonical}`;
 const ogImageUrl = `${siteUrl}${ogImage}`;
 
 // Generate breadcrumb schema if breadcrumbTitle is provided
-const breadcrumbSchema = breadcrumbTitle ? {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Strona główna",
-      "item": siteUrl
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": breadcrumbTitle
+const breadcrumbSchema = breadcrumbTitle
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Strona główna",
+          item: siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: breadcrumbTitle,
+        },
+      ],
     }
-  ]
-} : null;
+  : null;
 
 // WebPage schema for all pages
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": title,
-  "description": description,
-  "url": fullUrl,
-  "inLanguage": "pl-PL",
-  "isPartOf": {
+  name: title,
+  description: description,
+  url: fullUrl,
+  inLanguage: "pl-PL",
+  isPartOf: {
     "@type": "WebSite",
-    "name": "consmatt. digital studio",
-    "url": siteUrl
+    name: "consmatt. digital studio",
+    url: siteUrl,
   },
-  "publisher": {
+  publisher: {
     "@type": "Organization",
-    "name": "consmatt. digital studio",
-    "url": siteUrl,
-    "logo": {
+    name: "consmatt. digital studio",
+    url: siteUrl,
+    logo: {
       "@type": "ImageObject",
-      "url": `${siteUrl}/favicon.svg`
-    }
-  }
+      url: `${siteUrl}/favicon.svg`,
+    },
+  },
 };
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="pl" class="h-full scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
@@ -72,10 +78,10 @@ const webPageSchema = {
     <meta name="robots" content={robots} />
     <meta name="language" content="pl-PL" />
     <meta name="revisit-after" content="7 days" />
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href={fullUrl} />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={fullUrl} />
@@ -85,7 +91,7 @@ const webPageSchema = {
     <meta property="og:image:alt" content={title} />
     <meta property="og:site_name" content="consmatt. digital studio" />
     <meta property="og:locale" content="pl_PL" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={fullUrl} />
@@ -93,14 +99,14 @@ const webPageSchema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:image:alt" content={title} />
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#000000" />
     <meta name="msapplication-TileColor" content="#000000" />
-    
+
     <!-- Structured Data - Organization -->
     <script type="application/ld+json">
       {
@@ -117,16 +123,24 @@ const webPageSchema = {
         "sameAs": []
       }
     </script>
-    
+
     <!-- Breadcrumb Schema (if applicable) -->
-    {breadcrumbSchema && (
-      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    )}
-    
+    {
+      breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(breadcrumbSchema)}
+        />
+      )
+    }
+
     <!-- WebPage Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(webPageSchema)}
+    />
   </head>
-  <body class="min-h-screen bg-white text-brand-text font-sans">
+  <body class="min-h-screen bg-background text-foreground font-sans">
     <slot />
   </body>
 </html>

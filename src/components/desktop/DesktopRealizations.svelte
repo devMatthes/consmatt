@@ -48,10 +48,10 @@
     <!-- Projects Grid -->
   <div class="grid grid-cols-1 gap-16 xl:grid-cols-2">
       {#each projects as project}
-        <div class="group relative {project.backgroundColor} overflow-hidden transition-transform hover:scale-105">
+        <div class="group relative {project.backgroundColor} overflow-hidden rounded-2xl transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl cursor-pointer">
           <div class="p-8 flex flex-col items-end justify-between max-h-[620px]">
             <!-- Project Image -->
-            <div class="w-full flex items-center justify-center pt-8 pb-32">
+            <div class="w-full flex items-center justify-center pt-8 pb-32 transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2">
               <img
                 src={project.image}
                 alt={project.name}

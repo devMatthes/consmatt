@@ -11,39 +11,39 @@
 
   function handleLogoClick(event: MouseEvent) {
     event.preventDefault();
-    const isHomePage = window.location.pathname === '/';
-    
+    const isHomePage = window.location.pathname === "/";
+
     if (isHomePage) {
-      const homeElement = document.getElementById('home');
+      const homeElement = document.getElementById("home");
       if (homeElement) {
-        homeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        homeElement.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     } else {
-      window.location.href = '/';
+      window.location.href = "/";
     }
   }
 
   function handleContactClick(event: MouseEvent) {
     event.preventDefault();
-    const isHomePage = window.location.pathname === '/';
-    
+    const isHomePage = window.location.pathname === "/";
+
     if (isHomePage) {
-      const kontaktElement = document.getElementById('kontakt');
+      const kontaktElement = document.getElementById("kontakt");
       if (kontaktElement) {
-        kontaktElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        kontaktElement.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     } else {
-      window.location.href = '/kontakt';
+      window.location.href = "/kontakt";
     }
   }
 
   // Update URL based on visible section and watch contact section for color change
   $effect(() => {
-    const sections = ['home', 'oferta', 'realizacje', 'kontakt'];
+    const sections = ["home", "oferta", "realizacje", "kontakt"];
     const sectionElements = sections
-      .map(id => document.getElementById(id))
+      .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
 
     if (sectionElements.length === 0) return;
@@ -54,49 +54,49 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const sectionId = entry.target.id;
-            const newPath = sectionId === 'home' ? '/' : `/${sectionId}`;
+            const newPath = sectionId === "home" ? "/" : `/${sectionId}`;
             if (window.location.pathname !== newPath) {
-              window.history.replaceState(null, '', newPath);
+              window.history.replaceState(null, "", newPath);
             }
           }
         });
       },
       {
         threshold: 0.5,
-        rootMargin: '0px'
-      }
+        rootMargin: "0px",
+      },
     );
 
     // Scroll handler for topbar color change
-    const contactSection = document.getElementById('kontakt');
+    const contactSection = document.getElementById("kontakt");
     const updateContactPosition = () => {
       if (!contactSection) return;
       contactTop = contactSection.getBoundingClientRect().top;
     };
 
     // Check on scroll
-    window.addEventListener('scroll', updateContactPosition, { passive: true });
-    
+    window.addEventListener("scroll", updateContactPosition, { passive: true });
+
     // Initial check
     updateContactPosition();
 
     // Observe all sections for URL updates
-    sectionElements.forEach(section => urlObserver.observe(section));
+    sectionElements.forEach((section) => urlObserver.observe(section));
 
     return () => {
       urlObserver.disconnect();
-      window.removeEventListener('scroll', updateContactPosition);
+      window.removeEventListener("scroll", updateContactPosition);
     };
   });
 </script>
 
 <header
-  class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 transition-colors duration-300"
-  class:bg-primary={!isContactSection}
-  class:bg-secondary={isContactSection}
+  class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 transition-colors duration-300 dark:bg-background"
+  class:bg-background={!isContactSection}
+  class:bg-brand-yellow={isContactSection}
 >
-  <a 
-    href="/" 
+  <a
+    href="/"
     onclick={handleLogoClick}
     class="font-mono text-base font-bold lowercase text-primary transition hover:opacity-70 md:text-2xl"
     aria-label="Powrót do strony głównej"
@@ -110,12 +110,24 @@
       class="flex items-center justify-center text-primary transition hover:opacity-70"
       aria-label="Wyślij wiadomość"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M14 10C14 10.3536 13.8595 10.6928 13.6095 10.9428C13.3594 11.1929 13.0203 11.3333 12.6667 11.3333H4.66667L2 14V3.33333C2 2.97971 2.14048 2.64057 2.39052 2.39052C2.64057 2.14048 2.97971 2 3.33333 2H12.6667C13.0203 2 13.3594 2.14048 13.6095 2.39052C13.8595 2.64057 14 2.97971 14 3.33333V10Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+      >
+        <path
+          d="M14 10C14 10.3536 13.8595 10.6928 13.6095 10.9428C13.3594 11.1929 13.0203 11.3333 12.6667 11.3333H4.66667L2 14V3.33333C2 2.97971 2.14048 2.64057 2.39052 2.39052C2.64057 2.14048 2.97971 2 3.33333 2H12.6667C13.0203 2 13.3594 2.14048 13.6095 2.39052C13.8595 2.64057 14 2.97971 14 3.33333V10Z"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       </svg>
     </a>
     <button
-      onclick={() => isMenuOpen = true}
+      onclick={() => (isMenuOpen = true)}
       class="flex items-center justify-center text-primary transition hover:opacity-70"
       aria-label="Otwórz menu"
       type="button"
@@ -136,4 +148,4 @@
   </div>
 </header>
 
-<MobileMenu isOpen={isMenuOpen} onClose={() => isMenuOpen = false} />
+<MobileMenu isOpen={isMenuOpen} onClose={() => (isMenuOpen = false)} />
