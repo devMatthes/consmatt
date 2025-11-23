@@ -3,27 +3,25 @@
     name: string;
     logo: string;
     image: string;
+    imageWebp: string;
     backgroundColor: string;
     textColor: string;
   }
-
-  const imgProjectImage1 =
-    "https://www.figma.com/api/mcp/asset/c55cc5e3-45b1-4613-965c-5d9fa8732aa2";
-  const imgProjectImage =
-    "https://www.figma.com/api/mcp/asset/d9f44847-eba2-4995-b0f9-18006ed4b154";
 
   const projects: Project[] = [
     {
       name: "RPV",
       logo: "rpv",
-      image: imgProjectImage1,
+      image: "/images/rpv-project.png",
+      imageWebp: "/images/rpv-project.webp",
       backgroundColor: "bg-brand-navy",
       textColor: "text-white",
     },
     {
       name: "consmatt.",
       logo: "consmatt",
-      image: imgProjectImage,
+      image: "/images/consmatt-project.png",
+      imageWebp: "/images/consmatt-project.webp",
       backgroundColor: "bg-brand-yellow",
       textColor: "text-black",
     },
@@ -61,12 +59,18 @@
             <div
               class="w-full flex items-center justify-center pt-8 pb-32 transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2"
             >
-              <img
-                src={project.image}
-                alt={project.name}
-                class="max-w-[500px] w-full max-h-[240px] object-contain shadow-2xl rounded"
-                style="view-transition-name: {project.logo}-image;"
-              />
+              <picture>
+                <source srcset={project.imageWebp} type="image/webp" />
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  width="2832"
+                  height="1660"
+                  class="max-w-[500px] w-full max-h-[240px] object-contain shadow-2xl rounded"
+                  style="view-transition-name: {project.logo}-image;"
+                  loading="lazy"
+                />
+              </picture>
             </div>
 
             <!-- Project Logo/Name -->

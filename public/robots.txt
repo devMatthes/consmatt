@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://consmatt.pl/sitemap-index.xml
+Sitemap: https://consmatt.com/sitemap-index.xml

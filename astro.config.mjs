@@ -9,7 +9,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://consmatt.pl',
+  site: 'https://consmatt.com',
   integrations: [svelte(), sitemap()],
 
   vite: {

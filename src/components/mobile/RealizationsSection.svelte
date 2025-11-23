@@ -1,16 +1,11 @@
 <script lang="ts">
-  const imgRPVProject =
-    "https://www.figma.com/api/mcp/asset/4f068f0f-4804-4821-ac53-6266178cd457";
-  const imgRPVLogo =
-    "https://www.figma.com/api/mcp/asset/b0e38f88-fee5-4473-bfa4-cbb4ada19455";
-  const imgConsmattProject = "/image 2.png";
-
   type ProjectType = "detailed" | "simple";
 
   interface Project {
     title: string;
     description: string;
     image: string;
+    imageWebp: string;
     logo: string | null;
     bgColor: string;
     logoText: string | null;
@@ -24,8 +19,9 @@
       title: "RPV",
       description:
         "Napędzamy Twoją przyszłość, postawiamy na energię odnawialną",
-      image: imgRPVProject,
-      logo: imgRPVLogo,
+      image: "/images/rpv-project-mobile.png",
+      imageWebp: "/images/rpv-project-mobile.webp",
+      logo: null,
       bgColor: "#001527",
       logoText: "RPV",
       logoColor: "white",
@@ -35,7 +31,8 @@
     {
       title: "consmatt",
       description: "Strona prezentująca stronę studia consmatt.",
-      image: imgConsmattProject,
+      image: "/images/consmatt-og.png",
+      imageWebp: "/images/consmatt-og.webp",
       logo: null,
       bgColor: "#FEFAE0",
       logoText: "consmatt.",
@@ -88,11 +85,17 @@
         {#if project.type === "detailed"}
           <!-- Projekt 01: RPV (Detailed) -->
           <div class="flex flex-1 items-center justify-center p-8">
-            <img
-              src={project.image}
-              alt={getAltText(project)}
-              class="h-auto w-full max-w-[280px] rounded-[4px] object-cover shadow-[0px_40px_32px_8px_rgba(0,135,240,0.08)]"
-            />
+            <picture>
+              <source srcset={project.imageWebp} type="image/webp" />
+              <img
+                src={project.image}
+                alt={getAltText(project)}
+                width="2832"
+                height="1660"
+                class="h-auto w-full max-w-[280px] rounded-[4px] object-cover shadow-[0px_40px_32px_8px_rgba(0,135,240,0.08)]"
+                loading="lazy"
+              />
+            </picture>
           </div>
 
           <!-- RPV Logo at bottom right -->
@@ -129,11 +132,17 @@
         {:else}
           <!-- Projekt 02: Simple (image centered, text logo only) -->
           <div class="flex flex-1 items-center justify-center p-8">
-            <img
-              src={project.image}
-              alt={getAltText(project)}
-              class="mx-auto h-auto w-full max-w-[120px] object-contain shadow-[0px_40px_32px_8px_rgba(0,0,0,0.08)]"
-            />
+            <picture>
+              <source srcset={project.imageWebp} type="image/webp" />
+              <img
+                src={project.image}
+                alt={getAltText(project)}
+                width="652"
+                height="1190"
+                class="mx-auto h-auto w-full max-w-[120px] object-contain shadow-[0px_40px_32px_8px_rgba(0,0,0,0.08)]"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div
             class="absolute bottom-0 right-0 flex items-center gap-2 px-4 py-4 font-mono text-sm font-bold lowercase text-black"
