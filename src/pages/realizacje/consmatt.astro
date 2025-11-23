@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DesktopTopBar from "../../components/desktop/DesktopTopBar.svelte";
+import DesktopFooter from "../../components/desktop/DesktopFooter.svelte";
+---
+
+<BaseLayout
+	title="consmatt. - Realizacja | consmatt. digital studio"
+	description="Projekt strony internetowej consmatt digital studio - agencja interaktywna specjalizująca się w tworzeniu stron internetowych"
+>
+	<div class="flex min-h-screen flex-col bg-brand-yellow">
+		<DesktopTopBar client:load />
+
+		<main class="flex-1 pt-24">
+			<div class="mx-auto max-w-[1280px] px-6 xl:px-8 py-12">
+				<!-- Back Button -->
+				<a
+					href="/#realizacje"
+					class="inline-flex items-center gap-2 text-black hover:text-brand-orange transition-colors mb-8 group"
+				>
+					<svg
+						class="w-5 h-5 transition-transform group-hover:-translate-x-1"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M15 19l-7-7 7-7"></path>
+					</svg>
+					<span class="font-lato font-semibold">Powrót do realizacji</span>
+				</a>
+
+				<!-- Project Header -->
+				<div class="mb-8">
+					<h1 class="font-mono font-bold text-4xl text-black mb-4">
+						consmatt.
+					</h1>
+					<p class="text-black/80 text-lg max-w-2xl">
+						Nowoczesna strona portfolio dla agencji digital studio,
+						prezentująca nasze projekty i usługi.
+					</p>
+				</div>
+
+				<!-- Project Details -->
+				<div class="grid grid-cols-3 gap-8 mb-12 text-black">
+					<div>
+						<p class="text-black/60 text-sm mb-2">Branża</p>
+						<p class="font-lato font-semibold">Digital Studio</p>
+					</div>
+					<div>
+						<p class="text-black/60 text-sm mb-2">Technologie</p>
+						<p class="font-lato font-semibold">
+							Astro, Svelte, Tailwind CSS, GSAP
+						</p>
+					</div>
+					<div>
+						<p class="text-black/60 text-sm mb-2">Rok</p>
+						<p class="font-lato font-semibold">2024</p>
+					</div>
+				</div>
+
+				<!-- Website Preview -->
+				<div class="relative bg-white rounded-xl overflow-hidden shadow-2xl">
+					<div
+						class="flex items-center gap-2 bg-gray-100 px-4 py-3 border-b border-gray-200"
+					>
+						<div class="flex gap-2">
+							<div class="w-3 h-3 rounded-full bg-red-500"></div>
+							<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+							<div class="w-3 h-3 rounded-full bg-green-500"></div>
+						</div>
+						<div class="flex-1 mx-4">
+							<div
+								class="bg-white rounded px-4 py-1.5 text-sm text-gray-600 font-mono"
+							>
+								https://consmatt.com
+							</div>
+						</div>
+					</div>
+					<iframe
+						src="https://consmatt.com"
+						title="consmatt Website Preview"
+						class="w-full h-[800px] border-0"
+						style="view-transition-name: consmatt-image;"
+						loading="lazy"></iframe>
+				</div>
+
+				<!-- External Link -->
+				<div class="mt-8 text-center">
+					<a
+						href="https://consmatt.com"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center gap-2 px-6 py-3 bg-black text-white font-lato font-bold rounded-full hover:bg-brand-orange hover:text-white transition-all duration-300"
+					>
+						Odwiedź stronę consmatt
+						<svg
+							class="w-5 h-5"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+							></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</main>
+
+		<DesktopFooter variant="light" client:load />
+	</div>
+</BaseLayout>

@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { ViewTransitions } from "astro:transitions";
 
 const {
   title = "consmatt. — digital studio",
@@ -106,6 +107,9 @@ const webPageSchema = {
     <!-- Theme Color -->
     <meta name="theme-color" content="#000000" />
     <meta name="msapplication-TileColor" content="#000000" />
+
+    <!-- View Transitions -->
+    <ViewTransitions />
 
     <!-- Structured Data - Organization -->
     <script type="application/ld+json">
