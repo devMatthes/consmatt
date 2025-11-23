@@ -9,9 +9,9 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: "consmatt. digital studio",
-      url: "https://consmatt.pl",
+      url: "https://consmatt.com",
       telephone: "+48516649765",
-      email: "kontakt@consmatt.pl",
+      email: "kontakt@consmatt.com",
       address: {
         "@type": "PostalAddress",
         addressCountry: "PL",
@@ -70,7 +70,7 @@
         href="mailto:kontakt@consmatt.pl"
         class="font-open-sans group relative inline-flex items-end text-2xl font-bold leading-none text-primary"
       >
-        <span class="z-1">kontakt@consmatt.pl</span>
+        <span class="z-1">kontakt@consmatt.com</span>
         <span
           class="pointer-events-none absolute bottom-0 left-0 flex w-full items-end pr-4 z-0"
           aria-hidden="true"

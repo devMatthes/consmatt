@@ -174,7 +174,7 @@
       onclick={handleConsultationClick}
       class="group font-lato text-base rounded-[32px] pr-1 pl-6 py-1 gap-3 h-auto cursor-pointer flex items-center transition-all duration-300 ease-out active:scale-95 text-black bg-brand-yellow hover:bg-brand-orange hover:text-white hover:font-bold hover:shadow-sm"
     >
-      Darmowa Konsultacja
+      Darmowa Wycena
       <div
         class="w-[40px] h-[40px] bg-brand-orange rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
       >

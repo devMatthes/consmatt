@@ -49,7 +49,7 @@
               class="group font-mono font-bold text-3xl md:text-4xl text-black transition-colors inline-flex items-center gap-4"
             >
               <span class="relative">
-                kontakt@consmatt.pl
+                kontakt@consmatt.com
                 <span
                   class="absolute left-0 bottom-0 w-full h-[2px] bg-black transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100"
                 ></span>
