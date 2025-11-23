@@ -36,7 +36,7 @@ Oferujemy stałą opiekę techniczną, dzięki której Twoja strona zawsze dzia�
 <section class="relative bg-white py-24 px-6 xl:px-8">
   <div class="mx-auto max-w-[1280px]">
     <div
-      class="grid grid-cols-1 gap-12 xl:grid-cols-[minmax(0,0.35fr)_minmax(0,0.65fr)] xl:gap-24"
+      class="grid gap-12 lg:grid-cols-[minmax(0,0.3fr)_minmax(0,0.7fr)] xl:grid-cols-[minmax(0,0.35fr)_minmax(0,0.65fr)] xl:gap-24"
     >
       <!-- Section Title -->
       <h2 class="font-lato font-bold text-2xl text-black lg:text-left">
@@ -44,12 +44,12 @@ Oferujemy stałą opiekę techniczną, dzięki której Twoja strona zawsze dzia�
       </h2>
 
       <!-- Services Grid -->
-      <div class="grid grid-cols-1 gap-20 xl:grid-cols-2 xl:gap-24">
+      <div class="grid grid-cols-2 gap-20 xl:grid-cols-2 xl:gap-24">
         {#each services as service, index}
           <div class="flex flex-col">
             <!-- Service Title -->
             <h3
-              class="font-lato font-bold text-3xl lg:text-4xl text-black mb-8 whitespace-pre-line"
+              class="font-lato font-bold lg:text-3xl xl:text-4xl text-black mb-8 whitespace-pre-line"
             >
               {service.title}
             </h3>

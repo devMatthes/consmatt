@@ -145,20 +145,20 @@
   class="relative flex min-h-screen flex-col items-center justify-center bg-white px-6 pb-24 pt-32 xl:px-8"
 >
   <div
-    class="mx-auto flex w-full max-w-[1280px] flex-col items-center text-center gap-16"
+    class="mx-auto flex w-full max-w-screen-2xl flex-col items-center text-center gap-12 lg:gap-16 xl:gap-24"
   >
     <!-- Hero Text -->
-    <div class="max-w-4xl xl:max-w-none">
+    <div class="max-w-4xl xl:max-w-6xl 2xl:max-w-none">
       <h1
         bind:this={heroTitle}
-        class="font-lato font-medium text-6xl md:text-7xl text-black leading-tight mb-6"
+        class="font-lato font-medium text-5xl lg:text-6xl xl:text-7xl text-black leading-tight mb-6 lg:mb-8"
       >
         Tworzymy nowoczesne strony<br />
         dopasowane do Twoich potrzeb.
       </h1>
       <p
         bind:this={heroSubtitle}
-        class="font-lato text-3xl md:text-4xl text-brand-gray mt-8"
+        class="font-lato text-2xl lg:text-3xl xl:text-4xl text-brand-gray mt-8 lg:mt-10"
       >
         <span bind:this={word1} class="inline-block">Szybkie,</span>
         <span bind:this={word2} class="inline-block">responsywne,</span>

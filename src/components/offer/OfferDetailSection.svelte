@@ -171,7 +171,7 @@
 </script>
 
 <section bind:this={containerRef} class="bg-white relative py-24 lg:py-32">
-	<div class="mx-auto max-w-[1280px] w-full px-6 xl:px-8">
+	<div class="mx-auto max-w-screen-2xl w-full px-6 xl:px-8">
 		<!-- Header -->
 		<div class="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
 			<p
@@ -200,7 +200,7 @@
 			<div class="relative flex flex-col gap-24 lg:gap-32">
 				<!-- Spacer for first section to reach center -->
 				<!-- <div class="h-[20vh] lg:h-[25vh]"></div> -->
-				
+
 				{#each steps as step, i}
 					<div
 						bind:this={sectionRefs[i]}
@@ -256,7 +256,7 @@
 						</div>
 					</div>
 				{/each}
-				
+
 				<!-- Spacer for last section to reach center -->
 				<!-- <div class="h-[40vh] lg:h-[45vh]"></div> -->
 			</div>

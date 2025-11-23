@@ -16,7 +16,7 @@
 
       <!-- Contact Information -->
       <div class="mb-24 flex justify-end">
-        <div class="w-full max-w-2xl">
+        <div class="w-full lg:max-w-lg xl:max-w-2xl">
           <!-- Phone Number -->
           <div class="mb-12">
             <h3

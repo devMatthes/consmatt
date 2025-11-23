@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import DesktopHero from "../components/desktop/DesktopHero.svelte";
+import DesktopRealizations from "../components/desktop/DesktopRealizations.svelte";
+---
+
+<BaseLayout title="Test Responsive">
+    <div class="hidden lg:block">
+        <DesktopHero client:load />
+        <DesktopRealizations />
+    </div>
+    <div class="lg:hidden p-4">
+        <p>Please view on desktop (width >= 1024px)</p>
+    </div>
+</BaseLayout>

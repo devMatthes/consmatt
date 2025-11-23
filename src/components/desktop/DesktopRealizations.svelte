@@ -35,7 +35,7 @@
 </script>
 
 <section id="realizacje" class="relative bg-white py-24 px-6 xl:px-8">
-  <div class="mx-auto max-w-[1280px]">
+  <div class="mx-auto max-w-screen-2xl">
     <!-- Section Header -->
     <div class="mb-16">
       <h2 class="font-lato text-2xl text-brand-gray mb-8">Nasze Realizacje</h2>
@@ -48,14 +48,14 @@
     </div>
 
     <!-- Projects Grid -->
-    <div class="grid grid-cols-1 gap-16 xl:grid-cols-2">
+    <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
       {#each projects as project}
         <a
           href={getProjectLink(project.logo)}
           class="group relative {project.backgroundColor} overflow-hidden rounded-2xl transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl cursor-pointer block"
         >
           <div
-            class="p-8 flex flex-col items-end justify-between max-h-[620px]"
+            class="p-8 flex flex-col items-end justify-between lg:max-h-[480px] xl:max-h-[620px]"
           >
             <!-- Project Image -->
             <div
@@ -64,7 +64,7 @@
               <img
                 src={project.image}
                 alt={project.name}
-                class="max-w-[500px] w-full max-h-[300px] object-contain shadow-2xl rounded"
+                class="max-w-[500px] w-full max-h-[240px] object-contain shadow-2xl rounded"
                 style="view-transition-name: {project.logo}-image;"
               />
             </div>
