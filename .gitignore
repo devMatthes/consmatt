@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# generated ads
+consmatt_ad.png
+consmatt_ad_4_3.png

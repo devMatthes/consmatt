@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { ViewTransitions } from "astro:transitions";
+import CookieConsent from "../components/common/CookieConsent.svelte";
 
 const {
   title = "consmatt. — digital studio",
@@ -156,8 +157,54 @@ const webPageSchema = {
       type="application/ld+json"
       set:html={JSON.stringify(webPageSchema)}
     />
+    <!-- Google Consent Mode v2 -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      // Default consent to 'denied'
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+      });
+
+      // Check for saved consent and update if exists
+      const savedConsent = localStorage.getItem("cookie-consent");
+      if (savedConsent === "granted") {
+        gtag("consent", "update", {
+          ad_storage: "granted",
+          ad_user_data: "granted",
+          ad_personalization: "granted",
+          analytics_storage: "granted",
+        });
+      }
+    </script>
+
+    <!-- Google Analytics -->
+    <script
+      type="text/partytown"
+      src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}
+    ></script>
+    <script
+      type="text/partytown"
+      define:vars={{
+        gaMeasurementId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID,
+      }}
+    >
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", gaMeasurementId);
+    </script>
   </head>
   <body class="min-h-screen bg-background text-foreground font-sans">
     <slot />
+    <CookieConsent client:load />
   </body>
 </html>
+```
