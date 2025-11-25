@@ -9,9 +9,13 @@
   let word1: HTMLSpanElement;
   let word2: HTMLSpanElement;
   let word3: HTMLSpanElement;
+  let isReady = $state(false);
 
   onMount(() => {
-    // Set initial state
+    // Mark as ready to show container
+    isReady = true;
+
+    // Set initial state for GSAP animations
     gsap.set(heroTitle, {
       opacity: 0,
       y: 50,
@@ -145,13 +149,14 @@
   class="relative flex min-h-screen flex-col items-center justify-center bg-white px-6 pb-24 pt-32 xl:px-8"
 >
   <div
-    class="mx-auto flex w-full max-w-screen-2xl flex-col items-center text-center gap-12 lg:gap-16 xl:gap-24"
+    class="mx-auto flex w-full max-w-screen-2xl flex-col items-center text-center gap-12 lg:gap-16 xl:gap-24 transition-opacity duration-200"
+    class:invisible={!isReady}
   >
     <!-- Hero Text -->
     <div class="max-w-4xl xl:max-w-6xl 2xl:max-w-none">
       <h1
         bind:this={heroTitle}
-        class="font-lato font-medium text-5xl lg:text-6xl xl:text-7xl text-black leading-tight mb-6 lg:mb-8"
+        class="font-lato font-medium text-5xl lg:text-6xl xl:text-7xl text-black leading-tight mb-6 lg:mb-8 invisible-until-ready"
       >
         Tworzymy nowoczesne strony<br />
         dopasowane do Twoich potrzeb.
@@ -160,16 +165,16 @@
         bind:this={heroSubtitle}
         class="font-lato text-2xl lg:text-3xl xl:text-4xl text-brand-gray mt-8 lg:mt-10"
       >
-        <span bind:this={word1} class="inline-block">Szybkie,</span>
-        <span bind:this={word2} class="inline-block">responsywne,</span>
-        <span bind:this={word3} class="inline-block">skuteczne.</span>
+        <span bind:this={word1} class="inline-block invisible-until-ready">Szybkie,</span>
+        <span bind:this={word2} class="inline-block invisible-until-ready">responsywne,</span>
+        <span bind:this={word3} class="inline-block invisible-until-ready">skuteczne.</span>
       </p>
     </div>
 
     <!-- CTA Buttons -->
     <div
       bind:this={ctaButtons}
-      class="flex flex-wrap justify-center gap-6 xl:justify-start"
+      class="flex flex-wrap justify-center gap-6 xl:justify-start invisible-until-ready"
     >
       <a
         href="#oferta"
@@ -193,3 +198,13 @@
     </div>
   </div>
 </section>
+
+<style>
+  .invisible-until-ready {
+    visibility: hidden;
+  }
+  
+  .invisible {
+    visibility: hidden;
+  }
+</style>
