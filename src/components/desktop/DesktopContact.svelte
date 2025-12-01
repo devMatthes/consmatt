@@ -45,7 +45,7 @@
               Adres e-mail
             </h3>
             <a
-              href="mailto:kontakt@consmatt.pl"
+              href="mailto:kontakt@consmatt.com"
               class="group font-mono font-bold text-3xl md:text-4xl text-black transition-colors inline-flex items-center gap-4"
             >
               <span class="relative">

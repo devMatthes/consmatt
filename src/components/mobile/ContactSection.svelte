@@ -67,7 +67,7 @@
         >Adres e-mail</span
       >
       <a
-        href="mailto:kontakt@consmatt.pl"
+        href="mailto:kontakt@consmatt.com"
         class="font-open-sans group relative inline-flex items-end text-2xl font-bold leading-none text-primary"
       >
         <span class="z-1">kontakt@consmatt.com</span>
